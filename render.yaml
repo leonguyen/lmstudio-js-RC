@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: lmstudio-js-service
+    runtime: docker
+    repo: https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME # Link to your repository
+    plan: starter # "free" is available, but "starter" or higher is better for AI background execution
+    region: oregon # Choose your closest region (e.g., oregon, frankfurt, ohio, singapore)
+    envVars:
+      - key: PORT
+        value: "3000"
+      - key: LMSTUDIO_SERVER_URL
+        sync: false
+        placeholder: "Enter your LM Studio host (e.g., http://your-tailscale-or-public-ip:1234)"
+
